@@ -1,11 +1,13 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/' do
-  redirect to('/index.html')
+class Leegstandscan < Sinatra::Base
+  get '/' do
+    redirect to('/index.html')
+  end
+
+  post '/details' do
+    "Yo"
+  end
 end
 
-post '/details' do
-  "Yo"
-end
-
-run Sinatra::Application
+run Leegstandscan
