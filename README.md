@@ -1,6 +1,6 @@
-# Foundation Compass Template
+# Camelot Leegstandscan
 
-The easiest way to get started with Foundation + Compass.
+App to scan leegstand.
 
 ## Requirements
 
@@ -11,9 +11,9 @@ The easiest way to get started with Foundation + Compass.
 
 ## Quickstart
 
-  * [Download this starter compass project and unzip it](https://github.com/zurb/foundation-compass-template/archive/master.zip)
-  * Run `bower install` to install the latest version of Foundation
-  
+  * Clone the repo and `cd` into it
+  * Run `bower install` to install all components
+
 Then when you're working on your project, just run the following command:
 
 ```bash
