@@ -1,2 +1,31 @@
+@font-face {
+  font-family: 'Gill Sans MT Std Bold';
+  src: url('/fonts/GillSansMTStd-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gill Sans MT Std Medium';
+  src: url('/fonts/GillSansMTStd-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans MT Std Light';
+  src: url('/fonts/GillSansMTStd-Light.woff') format('woff');
+}
+
 @import "settings";
 @import "foundation";
+
+$green: #76bd1d;
+$grey: #56565a;
+
+h2 {
+  color: $grey;
+  font-size: 1.6rem;
+}
+
+.content {
+  background-color: $green;
+}
