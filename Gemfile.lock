@@ -16,9 +16,13 @@ GEM
       sass (>= 3.2, < 3.5)
     ffi (1.9.6)
     multi_json (1.10.1)
+    passenger (5.0.7)
+      rack
+      rake (>= 0.8.1)
     rack (1.6.1)
     rack-protection (1.5.3)
       rack
+    rake (10.4.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -34,5 +38,6 @@ PLATFORMS
 
 DEPENDENCIES
   compass (~> 1.0)
+  passenger
   sass (~> 3.4.0)
   sinatra
