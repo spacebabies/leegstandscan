@@ -15,17 +15,53 @@ h2 {
   font-size: 1.6rem;
 }
 
-header {
+#home_header {
+  hgroup {
+    margin: {
+      top: 2rem;
+      bottom: 2rem;
+    }
+    padding-left: 100px;
+    background: url(/images/home_header.png);
+    background-size: 78px 74px;
+    background-repeat: no-repeat;
+  }
   h1 {
     color: $green;
     text-transform: uppercase;
+    margin: {
+      bottom: 0;
+    }
+    line-height: 1.1;
   }
   h2 {
     color: $light-grey;
-    font-family: 'Gill Sans MT Std Light';
+    font-size: 110%;
+    letter-spacing: 3px;
+  }
+}
+
+#loupe {
+  margin: {
+    top: 3rem;
+    bottom: 3rem;
   }
 }
 
 .content {
   background-color: $green;
+}
+
+.launch_button {
+  height: 100px;
+  padding-right: 120px;
+  background: url(/images/next.png);
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: right 0;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 300;
+  color: $grey;
+  background-color: white;
 }
