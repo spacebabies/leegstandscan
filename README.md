@@ -14,10 +14,11 @@ App to scan leegstand.
   * Clone the repo and `cd` into it
   * Run `bower install` to install all components
 
-Then when you're working on your project, just run the following command:
+Then when you're working on your project, just run the following commands:
 
 ```bash
 bundle exec compass watch
+bundle exec rackup
 ```
 
 ## Upgrading
@@ -26,4 +27,10 @@ If you'd like to upgrade to a newer version of Foundation down the road just run
 
 ```bash
 bower update
+```
+
+## Deployment
+
+```bash
+git push heroku master
 ```
