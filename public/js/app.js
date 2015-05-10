@@ -14,6 +14,9 @@ $(document).foundation();
     function($scope, $routeParams) {
       $scope.questionId = $routeParams.questionId;
       $scope.question = $.grep(questions, function(e){ return e.number == $routeParams.questionId})[0];
+      $scope.answer = function(value) {
+        //
+      }
     }]);
 
   app.config(['$routeProvider',

@@ -16,32 +16,15 @@
   <div class="row">
     <div class="small-12 text-center columns">
       <h2>{{ questionId }}. {{ question.name }}</h2>
-      <button class="smiley low"></button>
-      <button class="smiley medium"></button>
-      <button class="smiley high"></button>
+      <button ng-click="answer(0)" class="smiley low"></button>
+      <button ng-click="answer(1)" class="smiley medium"></button>
+      <button ng-click="answer(3)" class="smiley high"></button>
     </div>
   </div>
   <div class="row">
     <div class="small-10 small-centered columns">
       <div id="progress">
-        <span class="step completed"></span>
-        <span class="step completed"></span>
-        <span class="step completed"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
+        <span class="step" ng-class="{'completed':number<=questionId}" ng-repeat="number in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]"></span>
       </div>
     </div>
   </div>
