@@ -1,11 +1,12 @@
+$green: #76bd1d;
+$light-grey: #9a989a;
+$ash: #e6e4e4;
+$grey: #56565a;
+
 @import "fonts";
 @import "settings";
 @import "foundation";
 @import "animate";
-
-$green: #76bd1d;
-$light-grey: #9a989a;
-$grey: #56565a;
 
 #home_header {
   hgroup {
@@ -94,7 +95,6 @@ section.question_h2 {
   background-size: 100px 100px;
   background-repeat: no-repeat;
   background-position: right 0;
-  text-transform: uppercase;
   font-size: 3rem;
   font-weight: 300;
   color: $grey;
@@ -135,7 +135,7 @@ section.question_h2 {
 
   /* http://codepen.io/ericrasch/pen/Irlpm */
   &:before {
-    border-top: 1px solid #dfdfdf;
+    border-top: 1px solid $ash;
     content: "";
     margin: 0 auto;
     position: absolute;
@@ -160,4 +160,8 @@ section.question_h2 {
   .completed {
     background-color: #e1f1d1;
   }
+}
+
+.button {
+  text-transform: uppercase;
 }

@@ -449,13 +449,13 @@ $font-family-sans-serif: 'Lato', "Helvetica Neue", Helvetica, Roboto, Arial, san
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: $white;
+$button-font-color: $light-grey;
 // $button-font-color-alt: $oil;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: $font-weight-normal;
+$button-font-weight: 300;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -464,7 +464,7 @@ $font-family-sans-serif: 'Lato', "Helvetica Neue", Helvetica, Roboto, Arial, san
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $ash;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);

@@ -13,6 +13,7 @@ $(document).foundation();
   app.controller('QuestionController', ['$scope', '$routeParams',
     function($scope, $routeParams) {
       $scope.questionId = $routeParams.questionId;
+      $scope.question = $.grep(questions, function(e){ return e.number == $routeParams.questionId})[0];
     }]);
 
   app.config(['$routeProvider',
