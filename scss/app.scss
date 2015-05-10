@@ -7,15 +7,6 @@ $green: #76bd1d;
 $light-grey: #9a989a;
 $grey: #56565a;
 
-body {
-  height: 100vh;
-}
-
-h2 {
-  color: $grey;
-  font-size: 1.6rem;
-}
-
 #home_header {
   hgroup {
     margin: {
@@ -51,7 +42,11 @@ h2 {
 
 .welcome {
   background-color: $green;
-  height: 100vh;
+  height: 85vh;
+
+  h2,h3,h4,h5,h6 {
+    color: $grey;
+  }
 }
 
 .launch_button {
