@@ -23,7 +23,11 @@ $(document).foundation();
         // insert the current answer
         answers.push({question: $routeParams.questionId, value: value});
 
-        $location.path('/vraag/' + (parseInt($routeParams.questionId, 10)+1));
+        if($routeParams.questionId=='18') {
+          $location.path('/score');
+        } else {
+          $location.path('/vraag/' + (parseInt($routeParams.questionId, 10)+1));
+        }
       }
     }]);
 
