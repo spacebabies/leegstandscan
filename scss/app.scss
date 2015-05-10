@@ -127,6 +127,21 @@ section.question_h2 {
 #progress {
   margin: {
     top: 5rem;
+    bottom: 3rem;
+  }
+
+  position: relative;
+  z-index: 1;
+
+  /* http://codepen.io/ericrasch/pen/Irlpm */
+  &:before {
+    border-top: 1px solid #dfdfdf;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 40%; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    z-index: -1;
   }
 
   .step {
@@ -135,6 +150,11 @@ section.question_h2 {
     width: 1.3rem;
     height: 1.3rem;
     border: 1px solid $light-grey;
+    background-color: white;
+  }
+
+  .step + .step {
+    margin-left: 22px;
   }
 
   .completed {
