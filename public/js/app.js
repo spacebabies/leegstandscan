@@ -10,12 +10,20 @@ $(document).foundation();
 
     }]);
 
-  app.controller('QuestionController', ['$scope', '$routeParams',
-    function($scope, $routeParams) {
+  app.controller('QuestionController', ['$scope', '$routeParams', '$location',
+    function($scope, $routeParams, $location) {
       $scope.questionId = $routeParams.questionId;
       $scope.question = $.grep(questions, function(e){ return e.number == $routeParams.questionId})[0];
+
+      // register an answer
       $scope.answer = function(value) {
-        //
+        // first remove all previous answers for this questionId
+        answers = $.grep(answers, function(e){ return e.question != $routeParams.questionId});
+
+        // insert the current answer
+        answers.push({question: $routeParams.questionId, value: value});
+
+        $location.path('/vraag/' + (parseInt($routeParams.questionId, 10)+1));
       }
     }]);
 
@@ -130,5 +138,7 @@ $(document).foundation();
       part: 2
     }
   ];
+
+  var answers = [];
 
 })();
