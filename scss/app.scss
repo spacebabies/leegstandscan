@@ -113,15 +113,20 @@ section.question_h2 {
 
   &.low {
     background-image: url(/images/button_low.png);
-    margin-right: 10rem;
   }
   &.medium {
     background-image: url(/images/button_medium.png);
   }
   &.high {
     background-image: url(/images/button_high.png);
-    margin-left: 10rem;
   }
+}
+
+.justify-space-between {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
 #progress {
@@ -139,7 +144,7 @@ section.question_h2 {
     content: "";
     margin: 0 auto;
     position: absolute;
-    top: 40%; left: 0; right: 0; bottom: 0;
+    top: 50%; left: 0; right: 0; bottom: 0;
     width: 100%;
     z-index: -1;
   }
@@ -151,10 +156,6 @@ section.question_h2 {
     height: 1.3rem;
     border: 1px solid $light-grey;
     background-color: white;
-  }
-
-  .step + .step {
-    margin-left: 22px;
   }
 
   .completed {
