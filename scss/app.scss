@@ -50,6 +50,19 @@ section.welcome {
   }
 }
 
+section.total {
+  h1,h2,h3,h4,h5,h6 {
+    color: $green;
+    font-weight: 700;
+  }
+
+  .smiley {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 0 auto;
+  }
+}
+
 section.question {
   h1,h2,h3,h4,h5,h6 {
     color: $green;
@@ -165,4 +178,26 @@ section.question_h2 {
 
 .button {
   text-transform: uppercase;
+}
+
+.score-panel {
+  padding: 0 0 2rem 0;
+  margin: {
+    top: 2rem;
+    bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 120%;
+    font-weight: 300;
+    display: block;
+    background-color: $green;
+    color: white;
+    text-transform: uppercase;
+    padding: 1rem 4rem;
+  }
+
+  .smiley {
+    margin: 3rem auto 0 auto;
+  }
 }

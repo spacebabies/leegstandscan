@@ -10,23 +10,44 @@ $(document).foundation();
 
     }]);
 
-  app.controller('QuestionController', ['$scope', '$routeParams', '$location',
-    function($scope, $routeParams, $location) {
+  app.controller('QuestionController', ['$scope', '$routeParams', '$location', 'scoreService',
+    function($scope, $routeParams, $location, scoreService) {
       $scope.questionId = $routeParams.questionId;
       $scope.question = $.grep(questions, function(e){ return e.number == $routeParams.questionId})[0];
+      $scope.parts = parts;
 
       // register an answer
       $scope.answer = function(value) {
-        // first remove all previous answers for this questionId
-        answers = $.grep(answers, function(e){ return e.question != $routeParams.questionId});
-
-        // insert the current answer
-        answers.push({question: $routeParams.questionId, value: value});
+        scoreService.score = scoreService.score + value; // global score
+        $scope.parts[$scope.question.part].score = $scope.parts[$scope.question.part].score + value; // per-part score
 
         if($routeParams.questionId=='18') {
           $location.path('/score');
         } else {
           $location.path('/vraag/' + (parseInt($routeParams.questionId, 10)+1));
+        }
+      }
+    }]);
+
+  app.controller('ScoreController', ['$scope', 'scoreService',
+    function($scope, scoreService){
+      $scope.parts = parts;
+      $scope.smile = function(score) {
+        if(score <= 6) {
+          return "low";
+        } else if (score >= 7 && score <= 11) {
+          return "medium";
+        } else if (score > 11) {
+          return "high";
+        }
+      }
+      $scope.totalSmile = function() {
+        if(scoreService.score <= 18) {
+          return "low";
+        } else if (scoreService.score >= 19 && scoreService.score <= 34) {
+          return "medium";
+        } else if (scoreService.score > 34) {
+          return "high";
         }
       }
     }]);
@@ -38,16 +59,31 @@ $(document).foundation();
         templateUrl: 'partials/question.html',
         controller: 'QuestionController'
       }).
+      when('/score', {
+        templateUrl: 'partials/score.html',
+        controller: 'ScoreController'
+      }).
       otherwise({
         templateUrl: 'partials/welcome.html',
         controller: 'WelcomeController'
       });
   }]);
 
+  app.service('scoreService', function() {
+    this.score = 0;
+  });
+
   var parts = [
-    "Criminele risico's",
-    "Technische risico's",
-    "Economische risico's"
+    {
+      name: "Criminele risico's",
+      score: 0
+    }, {
+      name: "Technische risico's",
+      score: 0
+    }, {
+      name: "Economische risico's",
+      score: 0
+    }
   ]
 
   var questions = [
@@ -142,7 +178,5 @@ $(document).foundation();
       part: 2
     }
   ];
-
-  var answers = [];
 
 })();
