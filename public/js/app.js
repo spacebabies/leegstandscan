@@ -10,16 +10,15 @@ $(document).foundation();
 
     }]);
 
-  app.controller('QuestionController', ['$scope', '$routeParams', '$location', 'scoreService',
-    function($scope, $routeParams, $location, scoreService) {
+  app.controller('QuestionController', ['$scope', '$routeParams', '$location', 'scoreService', 'partsService',
+    function($scope, $routeParams, $location, scoreService, partsService) {
       $scope.questionId = $routeParams.questionId;
       $scope.question = $.grep(questions, function(e){ return e.number == $routeParams.questionId})[0];
-      $scope.parts = parts;
 
       // register an answer
       $scope.answer = function(value) {
         scoreService.score = scoreService.score + value; // global score
-        $scope.parts[$scope.question.part].score = $scope.parts[$scope.question.part].score + value; // per-part score
+        partsService.parts[$scope.question.part].score = partsService.parts[$scope.question.part].score + value; // per-part score
 
         if($routeParams.questionId=='18') {
           $location.path('/score');
@@ -29,9 +28,10 @@ $(document).foundation();
       }
     }]);
 
-  app.controller('ScoreController', ['$scope', 'scoreService',
-    function($scope, scoreService){
-      $scope.parts = parts;
+  app.controller('ScoreController', ['$scope', 'scoreService', 'partsService',
+    function($scope, scoreService, partsService){
+      $scope.parts = partsService.parts;
+
       $scope.smile = function(score) {
         if(score <= 6) {
           return "low";
@@ -73,18 +73,20 @@ $(document).foundation();
     this.score = 0;
   });
 
-  var parts = [
-    {
-      name: "Criminele risico's",
-      score: 0
-    }, {
-      name: "Technische risico's",
-      score: 0
-    }, {
-      name: "Economische risico's",
-      score: 0
-    }
-  ]
+  app.service('partsService', function() {
+    this.parts = [
+      {
+        name: "Criminele risico's",
+        score: 0
+      }, {
+        name: "Technische risico's",
+        score: 0
+      }, {
+        name: "Economische risico's",
+        score: 0
+      }
+    ]
+  });
 
   var questions = [
     {
