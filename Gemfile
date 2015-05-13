@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gem "sinatra"
 gem "passenger"
+gem "google_drive"
 
 group :development do
   gem "sass", "~> 3.4.0"
