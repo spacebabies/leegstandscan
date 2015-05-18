@@ -82,7 +82,7 @@ section.question_h2 {
 .launch_button {
   height: 100px;
   padding-right: 130px;
-  background: url(/images/next.png);
+  background-image: url(/images/next.png);
   background-size: 100px 100px;
   background-repeat: no-repeat;
   background-position: right 0;
@@ -91,6 +91,27 @@ section.question_h2 {
   color: $grey;
   background-color: white;
   line-height: 65px;
+}
+
+.question_button {
+  height: 40px;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  font-size: 22px;
+  color: $light-grey;
+  line-height: 10px;
+}
+
+.back {
+  padding-left: 70px;
+  background-image: url(/images/back.png);
+  background-position: left 0;
+}
+
+.again {
+  padding-right: 70px;
+  background-image: url(/images/again.png);
+  background-position: right 0;
 }
 
 .smiley {
@@ -124,7 +145,7 @@ section.question_h2 {
 #progress {
   margin: {
     top: 5rem;
-    bottom: 3rem;
+    bottom: 5rem;
   }
 
   position: relative;
