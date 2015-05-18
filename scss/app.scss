@@ -8,30 +8,8 @@ $grey: #56565a;
 @import "foundation";
 @import "animate";
 
-#home_header {
-  hgroup {
-    margin: {
-      top: 2rem;
-      bottom: 2rem;
-    }
-    padding-left: 100px;
-    background: url(/images/home_header.png);
-    background-size: 78px 74px;
-    background-repeat: no-repeat;
-  }
-  h1 {
-    color: $green;
-    text-transform: uppercase;
-    margin: {
-      bottom: 0;
-    }
-    line-height: 1.1;
-  }
-  h2 {
-    color: $light-grey;
-    font-size: 110%;
-    letter-spacing: 3px;
-  }
+header {
+  padding: 2rem 0 2rem 0;
 }
 
 #loupe {
