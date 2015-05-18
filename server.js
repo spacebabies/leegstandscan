@@ -11,6 +11,7 @@ app.post('/details', function(request, response) {
   var contacts = new GoogleSpreadsheet(process.env.SPREADSHEET_KEY);
 
   contacts.setAuth(process.env.GOOGLE_EMAIL, process.env.GOOGLE_PASSWORD, function(err){
+    console.log(err);
     contacts.addRow(1, request.body);
   });
 
