@@ -10,12 +10,13 @@ $(document).foundation();
 
     }]);
 
-  app.controller('ContactController', function(){
+  app.controller('ContactController', ['$http', '$location', function($http, $location){
     this.details = {};
     this.submit = function(details) {
-      console.log(this.details);
+      $http.post('/details', details);
+      $location.path('/score')
     }
-  });
+  }]);
 
   app.controller('QuestionController', ['$scope', '$routeParams', '$location', 'storage',
     function($scope, $routeParams, $location, storage) {
