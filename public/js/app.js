@@ -10,8 +10,8 @@ $(document).foundation();
 
     }]);
 
-  app.controller('ContactController', ['$http', '$location', function($http, $location){
-    this.details = {};
+  app.controller('ContactController', ['$http', '$location', 'storage', function($http, $location, storage){
+    this.details = {criminele: storage.parts[0].score, technische: storage.parts[1].score, economische: storage.parts[2].score, totaal: storage.score};
     this.submit = function() {
       $http.post('/details', this.details);
       $location.path('/score')

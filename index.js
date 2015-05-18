@@ -13,6 +13,8 @@ app.post('/details', function(request, response) {
   contacts.setAuth(process.env.GOOGLE_EMAIL, process.env.GOOGLE_PASSWORD, function(err){
     contacts.addRow(1, request.body);
   });
+
+  response.send(request.body);
 });
 
 app.listen(app.get('port'), function() {
