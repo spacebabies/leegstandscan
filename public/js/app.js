@@ -10,6 +10,13 @@ $(document).foundation();
 
     }]);
 
+  app.controller('ContactController', function(){
+    this.details = {};
+    this.submit = function(details) {
+      console.log(this.details);
+    }
+  });
+
   app.controller('QuestionController', ['$scope', '$routeParams', '$location', 'storage',
     function($scope, $routeParams, $location, storage) {
       $scope.questionId = $routeParams.questionId;
@@ -21,7 +28,7 @@ $(document).foundation();
         storage.parts[$scope.question.part].score = storage.parts[$scope.question.part].score + value; // per-part score
 
         if($routeParams.questionId=='18') {
-          $location.path('/score');
+          $location.path('/contact');
         } else {
           $location.path('/vraag/' + (parseInt($routeParams.questionId, 10)+1));
         }
@@ -62,6 +69,10 @@ $(document).foundation();
       when('/score', {
         templateUrl: 'partials/score.html',
         controller: 'ScoreController'
+      }).
+      when('/contact', {
+        templateUrl: 'partials/contact.html',
+        controller: 'ContactController'
       }).
       otherwise({
         templateUrl: 'partials/welcome.html',

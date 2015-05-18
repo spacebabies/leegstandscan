@@ -1,6 +1,6 @@
 $green: #76bd1d;
 $light-grey: #9a989a;
-$ash: #e6e4e4;
+$ash: #e6e5e6;
 $grey: #56565a;
 
 @import "fonts";
@@ -68,7 +68,7 @@ section.question_h2 {
   h1,h2,h3,h4,h5,h6 {
     line-height: 140%;
     color: white;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -76,6 +76,21 @@ section.question_h2 {
   margin: {
     top: 3rem;
     bottom: 3rem;
+  }
+}
+
+label {
+  color: $green;
+  font-weight: 700;
+}
+
+form {
+  padding: {
+    top: 3rem;
+    bottom: 2rem;
+  }
+  .row {
+    margin-top: 1rem;
   }
 }
 
@@ -111,6 +126,16 @@ section.question_h2 {
 .again {
   padding-right: 70px;
   background-image: url(/images/again.png);
+  background-position: right 0;
+}
+
+.next {
+  padding-right: 110px;
+  height: 80px;
+  background-size: 80px 80px;
+  font-size: rem-calc(32);
+  line-height: rem-calc(44);
+  background-image: url(/images/next-green.png);
   background-position: right 0;
 }
 
@@ -199,5 +224,15 @@ section.question_h2 {
 
   .smiley {
     margin: 3rem auto 0 auto;
+  }
+}
+
+.ng-submitted {
+  input.ng-invalid {
+    background-color: #fa787e;
+  }
+
+  input.ng-valid {
+    border-color: #78fa89;
   }
 }

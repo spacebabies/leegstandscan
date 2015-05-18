@@ -1,0 +1,72 @@
+<section class="question_h1">
+  <div class="row">
+    <div class="small-12 text-center columns">
+      <h1>Camelot Leegstandscan</h1>
+    </div>
+  </div>
+</section>
+<section class="question_h2">
+  <div class="row">
+    <div class="small-12 text-center columns">
+      <h4>Vul uw gegevens in dan sturen wij u de uitslag per e-mail toe</h4>
+    </div>
+  </div>
+</section>
+<form name="contactForm" ng-controller="ContactController as contactCtrl" ng-submit="contactForm.$valid && contactCtrl.submit(details)" novalidate>
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <label for="voornaam" class="inline">Voornaam *</label>
+    </div>
+    <div class="small-12 medium-9 columns">
+      <input type="text" id="voornaam" name="voornaam" placeholder="Wendy" required ng-model="contactCtrl.details.voornaam">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <label for="achternaam" class="inline">Achternaam *</label>
+    </div>
+    <div class="small-12 medium-9 columns">
+      <input type="text" id="achternaam" name="achternaam" placeholder="de Jong" required ng-model="contactCtrl.details.achternaam">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <label for="bedrijfsnaam" class="inline">Bedrijfsnaam *</label>
+    </div>
+    <div class="small-12 medium-9 columns">
+      <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Camelot" required ng-model="contactCtrl.details.bedrijfsnaam">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <label for="email" class="inline">E-mailadres *</label>
+    </div>
+    <div class="small-12 medium-9 columns">
+      <input type="email" id="email" name="email" placeholder="wendy@voorbeeld.nl" required ng-model="contactCtrl.details.email">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <label for="telefoon" class="inline">Telefoon</label>
+    </div>
+    <div class="small-12 medium-9 columns">
+      <input type="tel" id="telefoon" name="telefoon" placeholder="010-1010101" ng-model="contactCtrl.details.telefoon">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <h6 class="subheader">* verplichte velden</h6>
+    </div>
+    <div class="small-12 medium-6 columns">
+    </div>
+    <div class="small-12 medium-6 text-right columns">
+      <button type="submit" class="next question_button button">Toon score</button>
+    </div>
+  </div>
+
+</form>
