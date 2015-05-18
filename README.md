@@ -18,8 +18,11 @@ Then when you're working on your project, just run the following commands:
 
 ```bash
 bundle exec compass watch
-bundle exec rackup
+npm install
+SPREADSHEET_KEY=abcde GOOGLE_EMAIL=you@example.com GOOGLE_PASSWORD=secret npm start
 ```
+
+The server is now running at http://localhost:5000
 
 ## Upgrading
 

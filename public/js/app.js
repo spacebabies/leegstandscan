@@ -12,8 +12,8 @@ $(document).foundation();
 
   app.controller('ContactController', ['$http', '$location', function($http, $location){
     this.details = {};
-    this.submit = function(details) {
-      $http.post('/details', details);
+    this.submit = function() {
+      $http.post('/details', this.details);
       $location.path('/score')
     }
   }]);

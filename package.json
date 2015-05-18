@@ -1,0 +1,27 @@
+{
+  "name": "leegstandscan",
+  "version": "0.0.1",
+  "description": "Express Node app to scan leegstand",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x",
+    "body-parser": "~1.12.4",
+    "google-spreadsheet": "~0.3.1"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spacebabies/leegstandscan"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
