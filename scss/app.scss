@@ -12,13 +12,6 @@ header {
   padding: 2rem 0 2rem 0;
 }
 
-#loupe {
-  margin: {
-    top: 3rem;
-    bottom: 3rem;
-  }
-}
-
 section.welcome {
   background-color: $green;
   height: 85vh;
@@ -79,9 +72,16 @@ section.question_h2 {
   }
 }
 
+#loupe {
+  margin: {
+    top: 3rem;
+    bottom: 3rem;
+  }
+}
+
 .launch_button {
   height: 100px;
-  padding-right: 120px;
+  padding-right: 130px;
   background: url(/images/next.png);
   background-size: 100px 100px;
   background-repeat: no-repeat;
@@ -90,6 +90,7 @@ section.question_h2 {
   font-weight: 300;
   color: $grey;
   background-color: white;
+  line-height: 65px;
 }
 
 .smiley {
