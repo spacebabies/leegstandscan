@@ -7,18 +7,12 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.post('/details', function(request, response) {
-  var Spreadsheet = require('edit-google-spreadsheet');
+  var MongoClient = require('mongodb').MongoClient;
 
-  Spreadsheet.load({
-    spreadsheetId: process.env.SPREADSHEET_KEY,
-    oauth: {
-      email: process.env.SERVICE_EMAIL,
-      key: process.env.SERVICE_KEY
-    }
-  }, function sheetReady(err, spreadsheet) {
-    if(err) console.log(err);
-    spreadsheet.add({ 1: request.body });
-  })
+  MongoClient.connect(process.env.MONGOLAB_URI, function(err, db) {
+    if(err) throw err;
+    db.collection('contacts').insert(request.body);
+  });
 
   response.send(request.body);
 });

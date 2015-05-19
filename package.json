@@ -9,7 +9,7 @@
   "dependencies": {
     "express": "~4.9.x",
     "body-parser": "~1.12.4",
-    "edit-google-spreadsheet": "^0.2.16"
+    "mongodb": "^2.0.33"
   },
   "devDependencies": {
     "gulp": "~3.8.11",
