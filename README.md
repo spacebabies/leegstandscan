@@ -32,7 +32,7 @@ gulp sass:watch
 The following runs the server locally:
 
 ```bash
-SPREADSHEET_KEY=abcde GOOGLE_EMAIL=you@example.com GOOGLE_PASSWORD=secret npm start
+MONGOLAB_URI=<uri> npm start
 ```
 
 The server is now running at http://localhost:5000
