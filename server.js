@@ -7,14 +7,16 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.post('/details', function(request, response) {
-  var GoogleSpreadsheet = require("google-spreadsheet");
-  var contacts = new GoogleSpreadsheet(process.env.SPREADSHEET_KEY);
-
-  contacts.setAuth(process.env.GOOGLE_EMAIL, process.env.GOOGLE_PASSWORD, function(err){
-    console.log(err);
-    contacts.addRow(1, request.body);
+  var Spreadsheet = require('google-spreadsheets-append');
+  var spreadsheet = Spreadsheet({
+      auth: {
+          email: process.env.SERVICE_EMAIL,
+          key: process.env.SERVICE_KEY
+      },
+      fileId: process.env.SPREADSHEET_KEY
   });
 
+  yield spreadsheet.add(request.body);
   response.send(request.body);
 });
 
