@@ -1,12 +1,10 @@
 # Camelot Leegstandscan
 
-App to scan leegstand.
+iPad app to answer a risk assessment for vacant properties.
 
 ## Requirements
 
-  * Ruby 1.9+
   * [Node.js](http://nodejs.org)
-  * [compass](http://compass-style.org/): `gem install compass`
   * [bower](http://bower.io): `npm install bower -g`
 
 ## Quickstart, front end
@@ -25,10 +23,15 @@ contact details which are added to a Google sheet.
 
 ## Running
 
-Then when you're working on your project, just run the following commands:
+Watch the .scss files and compile them to .css:
+
+```
+gulp sass:watch
+```
+
+The following runs the server locally:
 
 ```bash
-bundle exec compass watch
 SPREADSHEET_KEY=abcde GOOGLE_EMAIL=you@example.com GOOGLE_PASSWORD=secret npm start
 ```
 
