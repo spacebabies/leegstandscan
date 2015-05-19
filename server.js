@@ -7,16 +7,19 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 app.post('/details', function(request, response) {
-  var Spreadsheet = require('google-spreadsheets-append');
-  var spreadsheet = Spreadsheet({
-      auth: {
-          email: process.env.SERVICE_EMAIL,
-          key: process.env.SERVICE_KEY
-      },
-      fileId: process.env.SPREADSHEET_KEY
-  });
+  var Spreadsheet = require('edit-google-spreadsheet');
 
-  yield spreadsheet.add(request.body);
+  Spreadsheet.load({
+    spreadsheetId: process.env.SPREADSHEET_KEY,
+    oauth: {
+      email: process.env.SERVICE_EMAIL,
+      key: process.env.SERVICE_KEY
+    }
+  }, function sheetReady(err, spreadsheet) {
+    if(err) console.log(err);
+    spreadsheet.add({ 1: request.body });
+  })
+
   response.send(request.body);
 });
 
