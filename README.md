@@ -58,5 +58,5 @@ The data is stored in a free MongoDB instance from Mongolabs.
 To export the database to CSV, paste this:
 
 ```
-mongoexport -h ds037647.mongolab.com:37647 -d heroku_app36698906 -c contacts -u <user> -p <password> -o contacts.csv --csv -f voornaam,achternaam,email
+mongoexport -h <host:port> -d <database> -c contacts -u <user> -p <password> -o contacts.csv --csv -f voornaam,achternaam,email,bedrijfsnaam,criminele,technische,economische,totaal
 ```
