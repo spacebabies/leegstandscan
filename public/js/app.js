@@ -5,9 +5,12 @@ $(document).foundation();
 (function() {
   var app = angular.module('leegstandscan', ['ngRoute']);
 
-  app.controller('WelcomeController', ['$scope',
-    function($scope){
-
+  app.controller('WelcomeController', ['$scope', 'storage',
+    function($scope, storage){
+      storage.score = 0;
+      storage.parts[0].score = 0;
+      storage.parts[1].score = 0;
+      storage.parts[2].score = 0;
     }]);
 
   app.controller('ContactController', ['$http', '$location', 'storage', function($http, $location, storage){
