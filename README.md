@@ -17,7 +17,7 @@ The front end is an Angular app with dependencies managed by Bower.
 ## Quickstart, back end
 
 There is a small Node.js Express app to serve the Angular app and handle the
-contact details which are added to a Google sheet.
+contact details which are added to MongoDB.
 
   * npm install
 
@@ -53,10 +53,14 @@ git push heroku master
 
 ## CSV Export
 
-The data is stored in a free MongoDB instance from Mongolabs.
-
 To export the database to CSV, paste this:
 
 ```
 mongoexport -h <host:port> -d <database> -c contacts -u <user> -p <password> -o contacts.csv --csv -f voornaam,achternaam,email,bedrijfsnaam,criminele,technische,economische,totaal
 ```
+
+You can get the values for those arguments with `heroku config`.
+
+# Space Babies
+
+We create internet. www.spacebabies.nl
