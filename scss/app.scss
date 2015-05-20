@@ -50,7 +50,10 @@ section.question {
 
 section.question_h1 {
   background-color: $green;
-  height: 5rem;
+  height: rem-calc(82);
+  padding: {
+    top: rem-calc(6);
+  }
 
   h1,h2,h3,h4,h5,h6 {
     line-height: 190%;
@@ -66,7 +69,7 @@ section.question_h2 {
   height: 3rem;
 
   h1,h2,h3,h4,h5,h6 {
-    line-height: 140%;
+    line-height: 100%;
     color: white;
     font-weight: 600;
   }
@@ -86,7 +89,7 @@ label {
 
 form {
   padding: {
-    top: 3rem;
+    top: 2rem;
     bottom: 2rem;
   }
   .row {
@@ -130,11 +133,7 @@ form {
 }
 
 .next {
-  padding-right: 110px;
-  height: 80px;
-  background-size: 80px 80px;
-  font-size: rem-calc(32);
-  line-height: rem-calc(44);
+  padding-right: 70px;
   background-image: url(/images/next-green.png);
   background-position: right 0;
 }
