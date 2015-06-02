@@ -56,7 +56,7 @@ git push heroku master
 To export the database to CSV, paste this:
 
 ```
-mongoexport -h <host:port> -d <database> -c contacts -u <user> -p <password> -o contacts.csv --csv -f voornaam,achternaam,email,bedrijfsnaam,criminele,technische,economische,totaal
+mongoexport -h <host:port> -d <database> -c contacts -u <user> -p <password> -o contacts.csv --csv -f voornaam,achternaam,email,telefoon,bedrijfsnaam,criminele,technische,economische,totaal
 ```
 
 You can get the values for those arguments with `heroku config`.
